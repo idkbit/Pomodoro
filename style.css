@@ -3,31 +3,34 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-family: "Montserrat", sans-serif;
+}
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 .wrapper {
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #393e46;
   color: #eeeeee;
+  position: relative;
 }
 
 .description {
   width: 60%;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
-.description-text {
+.description-text p {
   padding: 10px;
-}
-.rules {
-  padding: 10px;
+  text-indent: 10px;
 }
 a,
 a:visited {
@@ -38,7 +41,8 @@ a:visited {
 h1,
 h2 {
   color: #00adb5;
-  text-indent: 10px;
+  padding-left: 20px;
+  margin: 20px 0;
 }
 h3 {
   color: #00adb5;
@@ -46,6 +50,12 @@ h3 {
 }
 ol {
   padding-left: 25px;
+}
+li {
+  margin: 10px 0;
+}
+li::marker {
+  color: #aad8d3;
 }
 .control-btn {
   padding: 10px 20px;
@@ -55,6 +65,7 @@ ol {
   border-radius: 5px;
   outline: none;
   color: #eeeeee;
+  margin: 5px;
 }
 .control-btn:disabled {
   background-color: #aad8d3;
@@ -67,6 +78,61 @@ ol {
 #pause {
   width: 100px;
 }
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 5px solid #00adb5;
+  border-radius: 50px;
+  padding: 10px;
+  height: 400px;
+}
+.block {
+  padding: 10px;
+}
+.msg {
+  color: #00adb5;
+  width: 300px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.timer {
+  font-family: "Space Mono", monospace;
+}
+#info {
+  width: 30px;
+  border-radius: 50%;
+}
+#info:focus {
+  outline: none;
+}
+#info:active {
+  box-shadow: 0 0 3px 3px #aad8d3;
+}
+[type="number"] {
+  background-color: #aad8d3;
+  border: none;
+  height: 20px;
+  font-size: 18px;
+  padding-left: 5px;
+  width: 50px;
+}
+[type="number"]:focus {
+  outline: none;
+}
 .italian {
   font-style: italic;
+}
+
+@media (max-width: 420px) {
+  .clock {
+    border-radius: 0;
+  }
+  .description {
+    width: 90%;
+  }
 }

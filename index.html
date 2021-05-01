@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Space+Mono&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
   <title>Pomodoro</title>
@@ -12,6 +15,7 @@
 
 <body>
   <div class="wrapper">
+    <h4 class="msg hidden">Время поработать!</h4>
     <div class="clock">
       <h3 class="timer">25:00</h3>
       <div class="btns">
@@ -21,17 +25,17 @@
       </div>
       <div class="settings">
         <div class="block">
-          <label for="work">Выберите время для работы<input type="number" name="work" id="work" value="25" max="45"
-              min="5"> минут</label>
+          <label for="work">Выберите время для работы <input type="number" name="work" id="work" value="25" min="5"
+              max="45"> минут</label>
 
         </div>
         <div class="block">
-          <label for="break">Выберите время для отдыха<input type="number" name="work" id="break" value="5" max="15"
-              min="1"> минут</label>
+          <label for="break">Выберите время для отдыха <input type="number" name="work" id="break" value="5" min="1"
+              max="15"> минут</label>
 
         </div>
       </div>
-      <button id="info">info</button>
+      <input type="image" src="./info.svg" alt="" id="info">
     </div>
     <article class="description">
       <div class="description-text">

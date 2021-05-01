@@ -5,6 +5,7 @@ const timer = document.querySelector(".timer");
 const workNum = document.querySelector("#work");
 const breakNum = document.querySelector("#break");
 const infoBtn = document.querySelector("#info");
+const msg = document.querySelector(".msg");
 
 let isActive = false;
 let workDuration;
@@ -27,7 +28,7 @@ const toggle = (reset) => {
       clockTimer = setInterval(() => {
         stepDown();
         displayTimeLeft();
-      }, 1000)
+      }, 1)
     }
   }
 }
@@ -64,9 +65,11 @@ const stepDown = () => {
     if (type === "work") {
       timeLeft = breakDuration;
       type = "break";
+      msg.textContent = "Хорошая работа! Время отдохнуть.";
     } else {
       timeLeft = workDuration;
       type = "work";
+      msg.textContent = "Время поработать!";
     }
   }
 }
@@ -80,6 +83,7 @@ startBtn.addEventListener("click", () => {
   timeLeft = workDuration;
   workNum.setAttribute("disabled", true);
   breakNum.setAttribute("disabled", true);
+  msg.classList.toggle("hidden");
   toggle();
 })
 
@@ -94,6 +98,7 @@ stopBtn.addEventListener("click", () => {
   workNum.removeAttribute("disabled");
   breakNum.removeAttribute("disabled");
   startBtn.removeAttribute("disabled");
+  msg.classList.toggle("hidden");
   toggle(true);
 })
 
@@ -103,9 +108,8 @@ infoBtn.addEventListener("click", () => {
 
 workNum.addEventListener("change", () => {
   if (workNum.value < 10) {
-    document.querySelector(".timer").textContent = `0${workNum.value}: 00`;
+    document.querySelector(".timer").textContent = `0${workNum.value}:00`;
   } else {
-    document.querySelector(".timer").textContent = `${workNum.value}: 00`;
+    document.querySelector(".timer").textContent = `${workNum.value}:00`;
   }
-
 })
