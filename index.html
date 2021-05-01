@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+  <title>Pomodoro</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <article class="description">
+      <h1>Техника Помодоро</h1>
+      <p><a href="https://ru.wikipedia.org/wiki/Метод_помидора">«Метод помидора»</a> (итал. <span
+          class="italian">tecnica del pomodoro</span>) — техника управления временем,
+        предложенная Франческо Чирилло в конце
+        1980-х. Методика предполагает увеличение эффективности работы при меньших временных затратах за счёт глубокой
+        концентрации и коротких перерывов. В классической технике отрезки времени — «помидоры» длятся полчаса: 25 минут
+        работы и
+        5 минут отдыха.</p>
+      <div class="rules">
+        <h2>Базовые принципы</h2>
+        <ol>
+          <li>Определитесь с задачами, которые планируете выполнять, расставьте приоритеты</li>
+          <li>Установите таймер на 20-25 минут.</li>
+          <li>Работайте, ни на что не отвлекаясь, до сигнала таймера</li>
+          <li>Сделайте короткий перерыв (5 минут).</li>
+          <li>После каждого 4-го «помидора» делайте длинный перерыв (15-30 минут).</li>
+        </ol>
+      </div>
+    </article>
+    <div class="clock">
+      <div class="timer"></div>
+      <div class="btns">
+        <button id="start">Start</button>
+        <button id="pause" disabled>Pause</button>
+        <button id="stop" disabled>Stop</button>
+      </div>
+      <div class="settings">
+        <div class="block">
+          <label for="work">Выберите время для работы<input type="number" name="work" id="work" value="25" max="45"
+              min="5"> минут</label>
+
+        </div>
+        <div class="block">
+          <label for="break">Выберите время для отдыха<input type="number" name="work" id="break" value="5" max="15"
+              min="1"> минут</label>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+
+</html>
