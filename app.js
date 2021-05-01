@@ -4,6 +4,7 @@ const stopBtn = document.querySelector("#stop");
 const timer = document.querySelector(".timer");
 const workNum = document.querySelector("#work");
 const breakNum = document.querySelector("#break");
+const infoBtn = document.querySelector("#info");
 
 let isActive = false;
 let workDuration;
@@ -96,3 +97,15 @@ stopBtn.addEventListener("click", () => {
   toggle(true);
 })
 
+infoBtn.addEventListener("click", () => {
+  document.querySelector(".description").classList.toggle("hidden");
+})
+
+workNum.addEventListener("change", () => {
+  if (workNum.value < 10) {
+    document.querySelector(".timer").textContent = `0${workNum.value}: 00`;
+  } else {
+    document.querySelector(".timer").textContent = `${workNum.value}: 00`;
+  }
+
+})
