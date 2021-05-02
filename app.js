@@ -110,8 +110,12 @@ stopBtn.addEventListener("click", () => {
 })
 
 infoBtn.addEventListener("click", () => {
-  document.querySelector(".description").classList.toggle("hidden");
-  document.querySelector(".description").classList.toggle("active");
+  const description = document.querySelector(".description");
+  if (description.style.display === "none") {
+    description.style.display = "flex";
+  } else {
+    description.style.display = "none";
+  }
 })
 
 workNum.addEventListener("change", () => {

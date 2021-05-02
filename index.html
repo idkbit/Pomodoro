@@ -26,18 +26,18 @@
       <div class="settings">
         <div class="block">
           <label for="work">Выберите время для работы <input type="number" name="work" id="work" value="25" min="5"
-              max="45"> минут</label>
+              max="45" step="5"> минут</label>
 
         </div>
         <div class="block">
-          <label for="break">Выберите время для отдыха <input type="number" name="work" id="break" value="5" min="1"
-              max="15"> минут</label>
+          <label for="break">Выберите время для отдыха <input type="number" name="work" id="break" value="5" min="0"
+              max="15" step="5"> минут</label>
 
         </div>
       </div>
       <input type="image" src="./info.svg" alt="" id="info">
     </div>
-    <article class="description hidden">
+    <article class="description" style="display: none;">
       <div class="description-text">
         <h1>Техника Помодоро</h1>
         <p><a href="https://ru.wikipedia.org/wiki/Метод_помидора" target="_blank">«Метод помидора»</a> (итал. <span
