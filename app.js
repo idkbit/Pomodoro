@@ -28,7 +28,7 @@ const toggle = (reset) => {
       clockTimer = setInterval(() => {
         stepDown();
         displayTimeLeft();
-      }, 1)
+      }, 1000)
     }
   }
 }
@@ -65,13 +65,20 @@ const stepDown = () => {
     if (type === "work") {
       timeLeft = breakDuration;
       type = "break";
+      playSound("./alarm.mp3");
       msg.textContent = "Хорошая работа! Время отдохнуть.";
     } else {
       timeLeft = workDuration;
       type = "work";
+      playSound("./alarm.mp3");
       msg.textContent = "Время поработать!";
     }
   }
+}
+
+const playSound = (url) => {
+  const audio = new Audio(url);
+  audio.play();
 }
 
 startBtn.addEventListener("click", () => {
@@ -104,6 +111,7 @@ stopBtn.addEventListener("click", () => {
 
 infoBtn.addEventListener("click", () => {
   document.querySelector(".description").classList.toggle("hidden");
+  document.querySelector(".description").classList.toggle("active");
 })
 
 workNum.addEventListener("change", () => {
