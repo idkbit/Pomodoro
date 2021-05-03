@@ -105,6 +105,8 @@ stopBtn.addEventListener("click", () => {
   workNum.removeAttribute("disabled");
   breakNum.removeAttribute("disabled");
   startBtn.removeAttribute("disabled");
+  pausetBtn.textContent = "Pause";
+  msg.textContent = "Время поработать!";
   msg.classList.toggle("hidden");
   toggle(true);
 })
