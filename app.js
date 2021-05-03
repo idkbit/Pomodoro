@@ -31,7 +31,7 @@ const toggle = (reset) => {
       }, 1000)
     }
   }
-}
+};
 
 const displayTimeLeft = () => {
   const secondsLeft = timeLeft;
@@ -48,7 +48,7 @@ const displayTimeLeft = () => {
   result += `${addZero(minutes)}:${addZero(seconds)}`;
   timer.textContent = result;
 
-}
+};
 
 const stopClock = () => {
   clearInterval(clockTimer);
@@ -56,7 +56,7 @@ const stopClock = () => {
   timeLeft = workDuration;
   displayTimeLeft();
   type = type === "work" ? "break" : "work";
-}
+};
 
 const stepDown = () => {
   if (timeLeft > 0) {
@@ -74,12 +74,12 @@ const stepDown = () => {
       msg.textContent = "Время поработать!";
     }
   }
-}
+};
 
 const playSound = (url) => {
   const audio = new Audio(url);
   audio.play();
-}
+};
 
 startBtn.addEventListener("click", () => {
   startBtn.setAttribute("disabled", true);
@@ -127,3 +127,17 @@ workNum.addEventListener("change", () => {
     document.querySelector(".timer").textContent = `${workNum.value}:00`;
   }
 })
+
+workNum.addEventListener("input", function () {
+  const num = this.value.match(/^\d+$/);
+  if (num === null) {
+    this.value = "";
+  }
+}, false)
+
+breakNum.addEventListener("input", function () {
+  const num = this.value.match(/^\d+$/);
+  if (num === null) {
+    this.value = "";
+  }
+}, false)
